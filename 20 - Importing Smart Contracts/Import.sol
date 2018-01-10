@@ -1,4 +1,4 @@
-pragma solidity ^0.4.9;
+pragma solidity ^0.4.18;
 import "./owned.sol";
 
 // import * as symbolName from "filename"; or import "filename" as symbolName; both are same
