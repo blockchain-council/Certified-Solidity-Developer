@@ -16,7 +16,7 @@ contract FunctionModifiers {
     }
 
     modifier onlyCreator() {
-        if (msg.sender != creator) throw;
+        require (msg.sender == creator);
         _;
     }
 
