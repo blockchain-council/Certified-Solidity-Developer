@@ -1,4 +1,4 @@
-//view function
+//view
 //constant is an alias to view.
 
 pragma solidity ^0.4.18;
@@ -9,7 +9,7 @@ contract C {
     }
 }
 
-//pure function
+//pure
 //Functions can be declared pure in which case they promise not to read from or modify the state.
 pragma solidity ^0.4.18;
 
