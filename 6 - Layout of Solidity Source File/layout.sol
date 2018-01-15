@@ -28,7 +28,6 @@ contract ContractName {
     address public stateVariable1;
     uint public stateVariable2;
     uint private stateVariable3;
-    string public constant HOST_ID = 0x1234;
 
     // Events
     event LogEvent1(address param1, uint param2);
