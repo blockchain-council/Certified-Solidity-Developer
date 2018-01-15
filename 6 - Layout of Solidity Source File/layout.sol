@@ -37,12 +37,12 @@ contract ContractName {
 
     // Function Modifiers
     modifier onlyIfOwnerModifier() { 
-        if (msg.sender != owner) return;
+        require (msg.sender == owner);
         _;
     }
 
     modifier onlyIfMortalModifier() { 
-        if (msg.sender != mortal) return;
+        require (msg.sender == mortal);
         _;
     }
 
