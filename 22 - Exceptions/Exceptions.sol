@@ -19,6 +19,11 @@ contract Sharer {
         assert(this.balance == balanceBeforeTransfer - msg.value / 2);
         return this.balance;
     }
+  
+  //default function
+    function(){
+        revert();// If none of the above function gets executed this function will get executed and all the changes will get revert.
+    }
 }
 
 // Currently, Solidity automatically generates a runtime exception in the following situations:
