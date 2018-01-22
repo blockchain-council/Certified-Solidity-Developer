@@ -2,7 +2,12 @@ pragma solidity ^0.4.18;
 
 /** @title Ticket System.*/
 contract TicketSystem{
-    address private owner;
+	/*
+	* @title Ticket System Example
+    * @author Toshendra Sharma
+    * @notice Example for the Certified Solidity Course
+    */
+    address private admin;
     uint public totalTickets;
     uint public totalTicketsSold;
     uint public ticketPrice;
@@ -13,13 +18,13 @@ contract TicketSystem{
 
     event TicketPurchasedEvent(address indexed _attendee, uint _amount);
 
-    modifier onlyOwner {
-        require(msg.sender == owner);
+    modifier onlyAdmin {
+        require(msg.sender == admin);
         _;
     }
 
     function TicketSystem(uint inTotalTickets, uint inTicketPrice) public{
-        owner = msg.sender;
+        admin = msg.sender;
         totalRevenue = 0;
         totalTicketsSold = 0;
         totalTickets = inTotalTickets;
@@ -43,7 +48,7 @@ contract TicketSystem{
 
         // track the total revenue
         totalRevenue += transactionTotal;
-        // send it to owner account
+        // send it to admin account
         for (uint i = totalTicketsSold + 1; i < totalTicketsSold + amount + 1; i++) {
             seatsToAttendees[i] = msg.sender;
         }
@@ -57,7 +62,7 @@ contract TicketSystem{
         }
   }
 
-    function withdrawAll() onlyOwner public payable returns (bool){
+    function withdrawAll() onlyAdmin public payable returns (bool){
           uint amount = totalRevenue;
           // Remember to zero the pending refund before
           // sending to prevent re-entrancy attacks
