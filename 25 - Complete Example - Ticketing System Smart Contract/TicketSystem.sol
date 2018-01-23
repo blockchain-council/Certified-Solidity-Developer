@@ -2,8 +2,8 @@ pragma solidity ^0.4.18;
 
 /** @title Ticket System.*/
 contract TicketSystem{
-	/*
-	* @title Ticket System Example
+    /*
+    * @title Ticket System Example
     * @author Toshendra Sharma
     * @notice Example for the Certified Solidity Course
     */
