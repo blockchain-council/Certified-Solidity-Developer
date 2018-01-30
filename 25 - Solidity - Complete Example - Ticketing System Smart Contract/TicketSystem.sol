@@ -1,8 +1,13 @@
 pragma solidity ^0.4.18;
 
 contract TicketSystem{
+<<<<<<< HEAD:25 - Solidity - Complete Example - Ticketing System Smart Contract/TicketSystem.sol
 	/*
 	* @title Ticket System Example
+=======
+    /*
+    * @title Ticket System Example
+>>>>>>> 8764fcdb9dbaafb0faebe4b1fbf5e40c95ee5594:25 - Complete Example - Ticketing System Smart Contract/TicketSystem.sol
     * @author Toshendra Sharma
     * @notice Example for the Certified Solidity Course
     */
