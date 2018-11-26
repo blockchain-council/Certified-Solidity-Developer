@@ -1,4 +1,4 @@
-pragma solidity ^0.4.18;
+pragma solidity ^0.4.25;
 import "./owned.sol";
 
 // import * as symbolName from "filename"; or import "filename" as symbolName; both are same
@@ -17,7 +17,7 @@ contract mortal is owned{
 contract User is owned, mortal{
     string public UserName;
 
-    function User(string _name) public {
+    constructor(string _name) public {
         UserName = _name;
     }
 }
