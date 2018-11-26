@@ -15,7 +15,7 @@ contract Coin {
     event LogCoinsSent(address sentTo, uint amount);
 
     mapping (address => uint) balances;
-    function Coin(uint initialCoins) public {
+    constructor(uint initialCoins) public {
         minter = msg.sender;
         totalCoins = initialCoins;
         balances[minter] = initialCoins;
