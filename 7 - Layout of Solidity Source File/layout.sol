@@ -1,5 +1,5 @@
 //versiona pragma
-pragma solidity ^0.4.18; 
+pragma solidity ^0.4.25; 
 
 //import section
 
@@ -56,7 +56,7 @@ contract ContractName {
 
 
     // Define consutruct here
-    function ContractName(uint initialCoins) public {
+    constructor (uint initialCoins) public {
        // Initialize state variables here
     }
 
@@ -65,6 +65,8 @@ contract ContractName {
     /// @return return variable details
     function function1(address param1, uint param2) public {
        //body of function here
+       //logging an event
+       emit LogEvent1(address param1, uint param2);
        //
        //
     }
