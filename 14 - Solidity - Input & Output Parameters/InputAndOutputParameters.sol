@@ -1,4 +1,4 @@
-pragma solidity ^0.4.18; 
+pragma solidity ^0.4.25; 
 
 /*
 * @title A Units & Global Variables Example
@@ -11,7 +11,7 @@ contract InputAndOutputParameters {
     // Define consutruct here
     uint input1;
     address input2;
-    function InputAndOutputParameters(uint _inputParam1, address _inputParam2) public {
+    constructor(uint _inputParam1, address _inputParam2) public {
        // Initialize state variables here
        input1 = _inputParam1;
        input2 = _inputParam2;
