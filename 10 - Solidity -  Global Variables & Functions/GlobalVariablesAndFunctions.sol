@@ -1,4 +1,4 @@
-pragma solidity ^0.4.18; 
+pragma solidity ^0.4.25; 
 
 /*
 * @title A Units & Global Variables Example
@@ -55,7 +55,7 @@ contract GlobalVariablesAndFunctions {
 
 
     // Define consutruct here
-    function GlobalVariablesAndFunctions(uint initialCoins)  {
+    constructor(uint initialCoins)  {
        // Initialize state variables here
     }
 
