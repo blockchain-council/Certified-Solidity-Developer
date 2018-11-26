@@ -1,13 +1,8 @@
-pragma solidity ^0.4.18;
+pragma solidity ^0.4.25;
 
 contract TicketSystem{
-<<<<<<< HEAD:25 - Solidity - Complete Example - Ticketing System Smart Contract/TicketSystem.sol
-	/*
-	* @title Ticket System Example
-=======
     /*
     * @title Ticket System Example
->>>>>>> 8764fcdb9dbaafb0faebe4b1fbf5e40c95ee5594:25 - Complete Example - Ticketing System Smart Contract/TicketSystem.sol
     * @author Toshendra Sharma
     * @notice Example for the Certified Solidity Course
     */
@@ -27,7 +22,7 @@ contract TicketSystem{
         _;
     }
 
-    function TicketSystem(uint inTotalTickets, uint inTicketPrice) public{
+    constructor(uint inTotalTickets, uint inTicketPrice) public{
         admin = msg.sender;
         totalRevenue = 0;
         totalTicketsSold = 0;
@@ -59,7 +54,7 @@ contract TicketSystem{
         attendeesToSeats[msg.sender] += amount;
         totalTicketsSold += amount;
         totalTickets -= amount;
-        TicketPurchasedEvent(msg.sender, amount);
+        emit TicketPurchasedEvent(msg.sender, amount);
         return true;
         } else{
             return false;
