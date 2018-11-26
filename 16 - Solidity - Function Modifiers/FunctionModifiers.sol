@@ -1,4 +1,4 @@
-pragma solidity ^0.4.18; 
+pragma solidity ^0.4.25; 
 
 /*
 * @title An Example for Solidity Course
@@ -10,7 +10,7 @@ contract FunctionModifiers {
 
 	address public creator;
     // Define consutruct here
-    function FunctionModifiers() public {
+    constructor() public {
        // Initialize state variables here
        creator = msg.sender;
     }
