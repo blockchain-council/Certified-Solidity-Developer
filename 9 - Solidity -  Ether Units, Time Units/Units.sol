@@ -1,4 +1,4 @@
-pragma solidity ^0.4.18; 
+pragma solidity ^0.4.25; 
 
 /*
 * @title A Units & Global Variables Example
@@ -43,11 +43,10 @@ contract Units {
     bool isEqual = (1 hours == 60 minutes);
     bool isEqual = (1 days == 24 hours);
     bool isEqual = (1 weeks = 7 days);
-    bool isEqual = (1 years = 365 days);
 
 
     Define consutruct here
-    function Units(uint initialCoins) public {
+    constructor(uint initialCoins) public {
        // Initialize state variables here
     }
 
