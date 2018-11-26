@@ -1,4 +1,4 @@
-pragma solidity ^0.4.18;
+pragma solidity ^0.4.25;
 
 contract Coin {
     /*
@@ -29,14 +29,14 @@ contract Coin {
         if (msg.sender != minter) return;
         balances[owner] += amount;
         totalCoins += amount;
-        LogCoinsMinted(owner, amount);
+        emit LogCoinsMinted(owner, amount);
     }
 
     function send(address receiver, uint amount) public {
         if (balances[msg.sender] < amount) return;
         balances[msg.sender] -= amount;
         balances[receiver] += amount;
-        LogCoinsSent(receiver, amount);
+        emit LogCoinsSent(receiver, amount);
     }
 
     function queryBalance(address addr) constant public returns (uint balance) {
