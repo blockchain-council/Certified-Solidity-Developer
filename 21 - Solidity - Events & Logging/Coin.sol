@@ -8,43 +8,14 @@ contract Coin {
     * @dev This is only for demo the simple Coin example
     * 
     */
-    address public minter;
-    uint public totalCoins;
+    mapping (address => uint256) public balanceOf;
+    // balanceOf[address] = 5;
+    event Transfer(address indexed from, address indexed to, uint256 value);
 
-    event LogCoinsMinted(address indexed deliveredTo, uint indexed amount);
-    event LogCoinsSent(address sentTo, uint amount);
-
-    mapping (address => uint) balances;
-    constructor(uint initialCoins) public {
-        minter = msg.sender;
-        totalCoins = initialCoins;
-        balances[minter] = initialCoins;
-    }
-
-    /// @notice Mint the coins
-    /// @dev This does not return any value
-    /// @param owner address of the coin owner, amount amount of coins to be delivered to owner
-    /// @return Nothing
-    function mint(address owner, uint amount) public {
-        if (msg.sender != minter) return;
-        balances[owner] += amount;
-        totalCoins += amount;
-        emit LogCoinsMinted(owner, amount);
-    }
-
-    function send(address receiver, uint amount) public {
-        if (balances[msg.sender] < amount) return;
-        balances[msg.sender] -= amount;
-        balances[receiver] += amount;
-        emit LogCoinsSent(receiver, amount);
-    }
-
-    function queryBalance(address addr) constant public returns (uint balance) {
-        return balances[addr];
-    }
-
-    function killCoin() public returns (bool) {
-        if (msg.sender != minter) return;
-        selfdestruct(minter);
-    }
+    function transfer(address _to, uint256 _value) public {
+		require(balanceOf[msg.sender] > _value) ;
+        balanceOf[msg.sender] -= _value;
+		balanceOf[_to] += _value;
+		emit Transfer(msg.sender, _to, _value);
+	}
 }
